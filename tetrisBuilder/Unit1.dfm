@@ -1,0 +1,1280 @@
+object Form1: TForm1
+  Left = 557
+  Top = 167
+  Width = 531
+  Height = 689
+  Caption = 'Eloiir_tetris'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Image1: TImage
+    Left = 0
+    Top = 72
+    Width = 33
+    Height = 33
+  end
+  object Image2: TImage
+    Left = 32
+    Top = 72
+    Width = 33
+    Height = 33
+  end
+  object Image3: TImage
+    Left = 64
+    Top = 72
+    Width = 33
+    Height = 33
+  end
+  object Image4: TImage
+    Left = 96
+    Top = 72
+    Width = 33
+    Height = 33
+  end
+  object Image5: TImage
+    Left = 128
+    Top = 72
+    Width = 33
+    Height = 33
+  end
+  object Image6: TImage
+    Left = 160
+    Top = 72
+    Width = 33
+    Height = 33
+  end
+  object Image7: TImage
+    Left = 192
+    Top = 72
+    Width = 33
+    Height = 33
+  end
+  object Image8: TImage
+    Left = 224
+    Top = 72
+    Width = 33
+    Height = 33
+  end
+  object Image9: TImage
+    Left = 256
+    Top = 72
+    Width = 33
+    Height = 33
+  end
+  object Image10: TImage
+    Left = 288
+    Top = 72
+    Width = 33
+    Height = 33
+  end
+  object Image11: TImage
+    Left = 0
+    Top = 104
+    Width = 33
+    Height = 33
+  end
+  object Image12: TImage
+    Left = 32
+    Top = 104
+    Width = 33
+    Height = 33
+  end
+  object Image13: TImage
+    Left = 64
+    Top = 104
+    Width = 33
+    Height = 33
+  end
+  object Image14: TImage
+    Left = 96
+    Top = 104
+    Width = 33
+    Height = 33
+  end
+  object Image15: TImage
+    Left = 128
+    Top = 104
+    Width = 33
+    Height = 33
+  end
+  object Image16: TImage
+    Left = 160
+    Top = 104
+    Width = 33
+    Height = 33
+  end
+  object Image17: TImage
+    Left = 192
+    Top = 104
+    Width = 33
+    Height = 33
+  end
+  object Image18: TImage
+    Left = 224
+    Top = 104
+    Width = 33
+    Height = 33
+  end
+  object Image19: TImage
+    Left = 256
+    Top = 104
+    Width = 33
+    Height = 33
+  end
+  object Image20: TImage
+    Left = 288
+    Top = 104
+    Width = 33
+    Height = 33
+  end
+  object Image21: TImage
+    Left = 0
+    Top = 136
+    Width = 33
+    Height = 33
+  end
+  object Image22: TImage
+    Left = 32
+    Top = 136
+    Width = 33
+    Height = 33
+  end
+  object Image23: TImage
+    Left = 64
+    Top = 136
+    Width = 33
+    Height = 33
+  end
+  object Image24: TImage
+    Left = 96
+    Top = 136
+    Width = 33
+    Height = 33
+  end
+  object Image25: TImage
+    Left = 128
+    Top = 136
+    Width = 33
+    Height = 33
+  end
+  object Image26: TImage
+    Left = 160
+    Top = 136
+    Width = 33
+    Height = 33
+  end
+  object Image27: TImage
+    Left = 192
+    Top = 136
+    Width = 33
+    Height = 33
+  end
+  object Image28: TImage
+    Left = 224
+    Top = 136
+    Width = 33
+    Height = 33
+  end
+  object Image29: TImage
+    Left = 256
+    Top = 136
+    Width = 33
+    Height = 33
+  end
+  object Image30: TImage
+    Left = 288
+    Top = 136
+    Width = 33
+    Height = 33
+  end
+  object Image31: TImage
+    Left = 0
+    Top = 168
+    Width = 33
+    Height = 33
+  end
+  object Image32: TImage
+    Left = 32
+    Top = 168
+    Width = 33
+    Height = 33
+  end
+  object Image33: TImage
+    Left = 64
+    Top = 168
+    Width = 33
+    Height = 33
+  end
+  object Image34: TImage
+    Left = 96
+    Top = 168
+    Width = 33
+    Height = 33
+  end
+  object Image35: TImage
+    Left = 128
+    Top = 168
+    Width = 33
+    Height = 33
+  end
+  object Image36: TImage
+    Left = 160
+    Top = 168
+    Width = 33
+    Height = 33
+  end
+  object Image37: TImage
+    Left = 192
+    Top = 168
+    Width = 33
+    Height = 33
+  end
+  object Image38: TImage
+    Left = 224
+    Top = 168
+    Width = 33
+    Height = 33
+  end
+  object Image39: TImage
+    Left = 256
+    Top = 168
+    Width = 33
+    Height = 33
+  end
+  object Image40: TImage
+    Left = 288
+    Top = 168
+    Width = 33
+    Height = 33
+  end
+  object Image41: TImage
+    Left = 0
+    Top = 200
+    Width = 33
+    Height = 33
+  end
+  object Image42: TImage
+    Left = 32
+    Top = 200
+    Width = 33
+    Height = 33
+  end
+  object Image43: TImage
+    Left = 64
+    Top = 200
+    Width = 33
+    Height = 33
+  end
+  object Image44: TImage
+    Left = 96
+    Top = 200
+    Width = 33
+    Height = 33
+  end
+  object Image45: TImage
+    Left = 128
+    Top = 200
+    Width = 33
+    Height = 33
+  end
+  object Image46: TImage
+    Left = 160
+    Top = 200
+    Width = 33
+    Height = 33
+  end
+  object Image47: TImage
+    Left = 192
+    Top = 200
+    Width = 33
+    Height = 33
+  end
+  object Image48: TImage
+    Left = 224
+    Top = 200
+    Width = 33
+    Height = 33
+  end
+  object Image49: TImage
+    Left = 256
+    Top = 200
+    Width = 33
+    Height = 33
+  end
+  object Image50: TImage
+    Left = 288
+    Top = 200
+    Width = 33
+    Height = 33
+  end
+  object Image51: TImage
+    Left = 0
+    Top = 232
+    Width = 33
+    Height = 33
+  end
+  object Image52: TImage
+    Left = 32
+    Top = 232
+    Width = 33
+    Height = 33
+  end
+  object Image53: TImage
+    Left = 64
+    Top = 232
+    Width = 33
+    Height = 33
+  end
+  object Image54: TImage
+    Left = 96
+    Top = 232
+    Width = 33
+    Height = 33
+  end
+  object Image55: TImage
+    Left = 128
+    Top = 232
+    Width = 33
+    Height = 33
+  end
+  object Image56: TImage
+    Left = 160
+    Top = 232
+    Width = 33
+    Height = 33
+  end
+  object Image57: TImage
+    Left = 192
+    Top = 232
+    Width = 33
+    Height = 33
+  end
+  object Image58: TImage
+    Left = 224
+    Top = 232
+    Width = 33
+    Height = 33
+  end
+  object Image59: TImage
+    Left = 256
+    Top = 232
+    Width = 33
+    Height = 33
+  end
+  object Image60: TImage
+    Left = 288
+    Top = 232
+    Width = 33
+    Height = 33
+  end
+  object Image61: TImage
+    Left = 0
+    Top = 264
+    Width = 33
+    Height = 33
+  end
+  object Image62: TImage
+    Left = 32
+    Top = 264
+    Width = 33
+    Height = 33
+  end
+  object Image63: TImage
+    Left = 64
+    Top = 264
+    Width = 33
+    Height = 33
+  end
+  object Image64: TImage
+    Left = 96
+    Top = 264
+    Width = 33
+    Height = 33
+  end
+  object Image65: TImage
+    Left = 128
+    Top = 264
+    Width = 33
+    Height = 33
+  end
+  object Image66: TImage
+    Left = 160
+    Top = 264
+    Width = 33
+    Height = 33
+  end
+  object Image67: TImage
+    Left = 192
+    Top = 264
+    Width = 33
+    Height = 33
+  end
+  object Image68: TImage
+    Left = 224
+    Top = 264
+    Width = 33
+    Height = 33
+  end
+  object Image69: TImage
+    Left = 256
+    Top = 264
+    Width = 33
+    Height = 33
+  end
+  object Image70: TImage
+    Left = 288
+    Top = 264
+    Width = 33
+    Height = 33
+  end
+  object Image71: TImage
+    Left = 0
+    Top = 296
+    Width = 33
+    Height = 33
+  end
+  object Image72: TImage
+    Left = 32
+    Top = 296
+    Width = 33
+    Height = 33
+  end
+  object Image73: TImage
+    Left = 64
+    Top = 296
+    Width = 33
+    Height = 33
+  end
+  object Image74: TImage
+    Left = 96
+    Top = 296
+    Width = 33
+    Height = 33
+  end
+  object Image75: TImage
+    Left = 128
+    Top = 296
+    Width = 33
+    Height = 33
+  end
+  object Image76: TImage
+    Left = 160
+    Top = 296
+    Width = 33
+    Height = 33
+  end
+  object Image77: TImage
+    Left = 192
+    Top = 296
+    Width = 33
+    Height = 33
+  end
+  object Image78: TImage
+    Left = 224
+    Top = 296
+    Width = 33
+    Height = 33
+  end
+  object Image79: TImage
+    Left = 256
+    Top = 296
+    Width = 33
+    Height = 33
+  end
+  object Image80: TImage
+    Left = 288
+    Top = 296
+    Width = 33
+    Height = 33
+  end
+  object Image81: TImage
+    Left = 0
+    Top = 328
+    Width = 33
+    Height = 33
+  end
+  object Image82: TImage
+    Left = 32
+    Top = 328
+    Width = 33
+    Height = 33
+  end
+  object Image83: TImage
+    Left = 64
+    Top = 328
+    Width = 33
+    Height = 33
+  end
+  object Image84: TImage
+    Left = 96
+    Top = 328
+    Width = 33
+    Height = 33
+  end
+  object Image85: TImage
+    Left = 128
+    Top = 328
+    Width = 33
+    Height = 33
+  end
+  object Image86: TImage
+    Left = 160
+    Top = 328
+    Width = 33
+    Height = 33
+  end
+  object Image87: TImage
+    Left = 192
+    Top = 328
+    Width = 33
+    Height = 33
+  end
+  object Image88: TImage
+    Left = 224
+    Top = 328
+    Width = 33
+    Height = 33
+  end
+  object Image89: TImage
+    Left = 256
+    Top = 328
+    Width = 33
+    Height = 33
+  end
+  object Image90: TImage
+    Left = 288
+    Top = 328
+    Width = 33
+    Height = 33
+  end
+  object Image91: TImage
+    Left = 0
+    Top = 360
+    Width = 33
+    Height = 33
+  end
+  object Image92: TImage
+    Left = 32
+    Top = 360
+    Width = 33
+    Height = 33
+  end
+  object Image93: TImage
+    Left = 64
+    Top = 360
+    Width = 33
+    Height = 33
+  end
+  object Image94: TImage
+    Left = 96
+    Top = 360
+    Width = 33
+    Height = 33
+  end
+  object Image95: TImage
+    Left = 128
+    Top = 360
+    Width = 33
+    Height = 33
+  end
+  object Image96: TImage
+    Left = 160
+    Top = 360
+    Width = 33
+    Height = 33
+  end
+  object Image97: TImage
+    Left = 192
+    Top = 360
+    Width = 33
+    Height = 33
+  end
+  object Image98: TImage
+    Left = 224
+    Top = 360
+    Width = 33
+    Height = 33
+  end
+  object Image99: TImage
+    Left = 256
+    Top = 360
+    Width = 33
+    Height = 33
+  end
+  object Image100: TImage
+    Left = 288
+    Top = 360
+    Width = 33
+    Height = 33
+  end
+  object Image101: TImage
+    Left = 0
+    Top = 392
+    Width = 33
+    Height = 33
+  end
+  object Image102: TImage
+    Left = 32
+    Top = 392
+    Width = 33
+    Height = 33
+  end
+  object Image103: TImage
+    Left = 64
+    Top = 392
+    Width = 33
+    Height = 33
+  end
+  object Image104: TImage
+    Left = 96
+    Top = 392
+    Width = 33
+    Height = 33
+  end
+  object Image105: TImage
+    Left = 128
+    Top = 392
+    Width = 33
+    Height = 33
+  end
+  object Image106: TImage
+    Left = 160
+    Top = 392
+    Width = 33
+    Height = 33
+  end
+  object Image107: TImage
+    Left = 192
+    Top = 392
+    Width = 33
+    Height = 33
+  end
+  object Image108: TImage
+    Left = 224
+    Top = 392
+    Width = 33
+    Height = 33
+  end
+  object Image109: TImage
+    Left = 256
+    Top = 392
+    Width = 33
+    Height = 33
+  end
+  object Image110: TImage
+    Left = 288
+    Top = 392
+    Width = 33
+    Height = 33
+  end
+  object Image111: TImage
+    Left = 0
+    Top = 424
+    Width = 33
+    Height = 33
+  end
+  object Image112: TImage
+    Left = 32
+    Top = 424
+    Width = 33
+    Height = 33
+  end
+  object Image113: TImage
+    Left = 64
+    Top = 424
+    Width = 33
+    Height = 33
+  end
+  object Image114: TImage
+    Left = 96
+    Top = 424
+    Width = 33
+    Height = 33
+  end
+  object Image115: TImage
+    Left = 128
+    Top = 424
+    Width = 33
+    Height = 33
+  end
+  object Image116: TImage
+    Left = 160
+    Top = 424
+    Width = 33
+    Height = 33
+  end
+  object Image117: TImage
+    Left = 192
+    Top = 424
+    Width = 33
+    Height = 33
+  end
+  object Image118: TImage
+    Left = 224
+    Top = 424
+    Width = 33
+    Height = 33
+  end
+  object Image119: TImage
+    Left = 256
+    Top = 424
+    Width = 33
+    Height = 33
+  end
+  object Image120: TImage
+    Left = 288
+    Top = 424
+    Width = 33
+    Height = 33
+  end
+  object Image121: TImage
+    Left = 0
+    Top = 456
+    Width = 33
+    Height = 33
+  end
+  object Image122: TImage
+    Left = 32
+    Top = 456
+    Width = 33
+    Height = 33
+  end
+  object Image123: TImage
+    Left = 64
+    Top = 456
+    Width = 33
+    Height = 33
+  end
+  object Image124: TImage
+    Left = 96
+    Top = 456
+    Width = 33
+    Height = 33
+  end
+  object Image125: TImage
+    Left = 128
+    Top = 456
+    Width = 33
+    Height = 33
+  end
+  object Image126: TImage
+    Left = 160
+    Top = 456
+    Width = 33
+    Height = 33
+  end
+  object Image127: TImage
+    Left = 192
+    Top = 456
+    Width = 33
+    Height = 33
+  end
+  object Image128: TImage
+    Left = 224
+    Top = 456
+    Width = 33
+    Height = 33
+  end
+  object Image129: TImage
+    Left = 256
+    Top = 456
+    Width = 33
+    Height = 33
+  end
+  object Image130: TImage
+    Left = 288
+    Top = 456
+    Width = 33
+    Height = 33
+  end
+  object Image131: TImage
+    Left = 0
+    Top = 488
+    Width = 33
+    Height = 33
+  end
+  object Image132: TImage
+    Left = 32
+    Top = 488
+    Width = 33
+    Height = 33
+  end
+  object Image133: TImage
+    Left = 64
+    Top = 488
+    Width = 33
+    Height = 33
+  end
+  object Image134: TImage
+    Left = 96
+    Top = 488
+    Width = 33
+    Height = 33
+  end
+  object Image135: TImage
+    Left = 128
+    Top = 488
+    Width = 33
+    Height = 33
+  end
+  object Image136: TImage
+    Left = 160
+    Top = 488
+    Width = 33
+    Height = 33
+  end
+  object Image137: TImage
+    Left = 192
+    Top = 488
+    Width = 33
+    Height = 33
+  end
+  object Image138: TImage
+    Left = 224
+    Top = 488
+    Width = 33
+    Height = 33
+  end
+  object Image139: TImage
+    Left = 256
+    Top = 488
+    Width = 33
+    Height = 33
+  end
+  object Image140: TImage
+    Left = 288
+    Top = 488
+    Width = 33
+    Height = 33
+  end
+  object Image141: TImage
+    Left = 0
+    Top = 520
+    Width = 33
+    Height = 33
+  end
+  object Image142: TImage
+    Left = 32
+    Top = 520
+    Width = 33
+    Height = 33
+  end
+  object Image143: TImage
+    Left = 64
+    Top = 520
+    Width = 33
+    Height = 33
+  end
+  object Image144: TImage
+    Left = 96
+    Top = 520
+    Width = 33
+    Height = 33
+  end
+  object Image145: TImage
+    Left = 128
+    Top = 520
+    Width = 33
+    Height = 33
+  end
+  object Image146: TImage
+    Left = 160
+    Top = 520
+    Width = 33
+    Height = 33
+  end
+  object Image147: TImage
+    Left = 192
+    Top = 520
+    Width = 33
+    Height = 33
+  end
+  object Image148: TImage
+    Left = 224
+    Top = 520
+    Width = 33
+    Height = 33
+  end
+  object Image149: TImage
+    Left = 256
+    Top = 520
+    Width = 33
+    Height = 33
+  end
+  object Image150: TImage
+    Left = 288
+    Top = 520
+    Width = 33
+    Height = 33
+  end
+  object Image151: TImage
+    Left = 0
+    Top = 552
+    Width = 33
+    Height = 33
+  end
+  object Image152: TImage
+    Left = 32
+    Top = 552
+    Width = 33
+    Height = 33
+  end
+  object Image153: TImage
+    Left = 64
+    Top = 552
+    Width = 33
+    Height = 33
+  end
+  object Image154: TImage
+    Left = 96
+    Top = 552
+    Width = 33
+    Height = 33
+  end
+  object Image155: TImage
+    Left = 128
+    Top = 552
+    Width = 33
+    Height = 33
+  end
+  object Image156: TImage
+    Left = 160
+    Top = 552
+    Width = 33
+    Height = 33
+  end
+  object Image157: TImage
+    Left = 192
+    Top = 552
+    Width = 33
+    Height = 33
+  end
+  object Image158: TImage
+    Left = 224
+    Top = 552
+    Width = 33
+    Height = 33
+  end
+  object Image159: TImage
+    Left = 256
+    Top = 552
+    Width = 33
+    Height = 33
+  end
+  object Image160: TImage
+    Left = 288
+    Top = 552
+    Width = 33
+    Height = 33
+  end
+  object Image161: TImage
+    Left = 0
+    Top = 584
+    Width = 33
+    Height = 33
+  end
+  object Image162: TImage
+    Left = 32
+    Top = 584
+    Width = 33
+    Height = 33
+  end
+  object Image163: TImage
+    Left = 64
+    Top = 584
+    Width = 33
+    Height = 33
+  end
+  object Image164: TImage
+    Left = 96
+    Top = 584
+    Width = 33
+    Height = 33
+  end
+  object Image165: TImage
+    Left = 128
+    Top = 584
+    Width = 33
+    Height = 33
+  end
+  object Image166: TImage
+    Left = 160
+    Top = 584
+    Width = 33
+    Height = 33
+  end
+  object Image167: TImage
+    Left = 192
+    Top = 584
+    Width = 33
+    Height = 33
+  end
+  object Image168: TImage
+    Left = 224
+    Top = 584
+    Width = 33
+    Height = 33
+  end
+  object Image169: TImage
+    Left = 256
+    Top = 584
+    Width = 33
+    Height = 33
+  end
+  object Image170: TImage
+    Left = 288
+    Top = 584
+    Width = 33
+    Height = 33
+  end
+  object Image171: TImage
+    Left = 0
+    Top = 616
+    Width = 33
+    Height = 33
+  end
+  object Image172: TImage
+    Left = 32
+    Top = 616
+    Width = 33
+    Height = 33
+  end
+  object Image173: TImage
+    Left = 64
+    Top = 616
+    Width = 33
+    Height = 33
+  end
+  object Image174: TImage
+    Left = 96
+    Top = 616
+    Width = 33
+    Height = 33
+  end
+  object Image175: TImage
+    Left = 128
+    Top = 616
+    Width = 33
+    Height = 33
+  end
+  object Image176: TImage
+    Left = 160
+    Top = 616
+    Width = 33
+    Height = 33
+  end
+  object Image177: TImage
+    Left = 192
+    Top = 616
+    Width = 33
+    Height = 33
+  end
+  object Image178: TImage
+    Left = 224
+    Top = 616
+    Width = 33
+    Height = 33
+  end
+  object Image179: TImage
+    Left = 256
+    Top = 616
+    Width = 33
+    Height = 33
+  end
+  object Image180: TImage
+    Left = 288
+    Top = 616
+    Width = 33
+    Height = 33
+  end
+  object Label1: TLabel
+    Left = 336
+    Top = 72
+    Width = 154
+    Height = 32
+    Caption = 'Score: 00000'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -29
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 336
+    Top = 112
+    Width = 148
+    Height = 32
+    Caption = 'Level: 00000'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -29
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 336
+    Top = 152
+    Width = 146
+    Height = 32
+    Caption = 'Lines: 00000'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -29
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 336
+    Top = 192
+    Width = 140
+    Height = 32
+    Caption = 'Next piece: '
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -29
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Image181: TImage
+    Left = 352
+    Top = 232
+    Width = 33
+    Height = 33
+  end
+  object Image182: TImage
+    Left = 384
+    Top = 232
+    Width = 33
+    Height = 33
+  end
+  object Image183: TImage
+    Left = 416
+    Top = 232
+    Width = 33
+    Height = 33
+  end
+  object Image184: TImage
+    Left = 448
+    Top = 232
+    Width = 33
+    Height = 33
+  end
+  object Image185: TImage
+    Left = 352
+    Top = 264
+    Width = 33
+    Height = 33
+  end
+  object Image186: TImage
+    Left = 384
+    Top = 264
+    Width = 33
+    Height = 33
+  end
+  object Image187: TImage
+    Left = 416
+    Top = 264
+    Width = 33
+    Height = 33
+  end
+  object Image188: TImage
+    Left = 448
+    Top = 264
+    Width = 33
+    Height = 33
+  end
+  object Image189: TImage
+    Left = 352
+    Top = 296
+    Width = 33
+    Height = 33
+  end
+  object Image190: TImage
+    Left = 384
+    Top = 296
+    Width = 33
+    Height = 33
+  end
+  object Image191: TImage
+    Left = 416
+    Top = 296
+    Width = 33
+    Height = 33
+  end
+  object Image192: TImage
+    Left = 448
+    Top = 296
+    Width = 33
+    Height = 33
+  end
+  object Image193: TImage
+    Left = 352
+    Top = 328
+    Width = 33
+    Height = 33
+  end
+  object Image194: TImage
+    Left = 384
+    Top = 328
+    Width = 33
+    Height = 33
+  end
+  object Image195: TImage
+    Left = 416
+    Top = 328
+    Width = 33
+    Height = 33
+  end
+  object Image196: TImage
+    Left = 448
+    Top = 328
+    Width = 33
+    Height = 33
+  end
+  object Label5: TLabel
+    Left = 304
+    Top = 24
+    Width = 204
+    Height = 32
+    Caption = 'Game is finished.'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -29
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    Visible = False
+  end
+  object Button1: TButton
+    Left = 56
+    Top = 16
+    Width = 209
+    Height = 41
+    Caption = 'Start'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -32
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 15
+    OnTimer = Timer1Timer
+    Left = 272
+    Top = 24
+  end
+end

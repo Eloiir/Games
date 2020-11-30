@@ -1,0 +1,415 @@
+/**
+*  Author: Eloiir
+*  Project for Borland C++ Builder 6
+**/
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+
+// - includes -
+#include <vector>
+#include <string>
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
+#include <cmath>
+#include <sstream> // for testing
+
+#include "mmsystem.h"
+
+#include <stdio.h>
+#include <Windows.h>
+// - --- -
+
+using namespace std;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+        // srand(time(NULL));
+        for(int i = 0; i < 180; i++){
+               Field[i] = static_cast<TImage*>(FindComponent("Image" + IntToStr(i+1)));
+               Field[i] -> Stretch = true;
+               Field[i] -> Picture -> LoadFromFile("img/plain.bmp");
+        }
+        for(int i = 0; i < 16; i++){
+               ShowNext[i] = static_cast<TImage*>(FindComponent("Image" + IntToStr(i+181)));
+               ShowNext[i] -> Stretch = true;
+               ShowNext[i] -> Picture -> LoadFromFile("img/plain.bmp");
+        }
+}
+//---------------------------------------------------------------------------
+
+class Tetromino{
+   public:
+   string currentShape;
+   unsigned short templateId;
+   int posX;
+   int posY;
+   vector <vector <char> > board;
+   vector <string> tetrTemplate;
+   bool gameOver;
+   bool dropped;
+   int combo;
+   unsigned int level;
+   bool lvlUp;
+   unsigned int score;
+   unsigned int completedLines;
+
+   void initialisePiece(unsigned short id){
+      templateId = id;
+      currentShape = tetrTemplate[templateId];
+      posX = 4;
+      posY = 0;
+      gameOver = !doesPieceFit(currentShape);
+      dropped = false;
+   }
+
+   Tetromino(unsigned short id){
+        vector <vector <char> > temp(18, vector<char> (10, false));
+        board = temp;
+
+        tetrTemplate.resize(7);
+        tetrTemplate[0] = "xxxx";             // O piece
+        tetrTemplate[1] = "  x   x   x   x "; // I piece
+        tetrTemplate[2] = " x  x xx ";        // J piece
+        tetrTemplate[3] = " x  x  xx";        // L piece
+        tetrTemplate[4] = " x  xx  x";        // S piece
+        tetrTemplate[5] = "  x xx x ";        // Z piece
+        tetrTemplate[6] = " x xxx   ";        // T piece
+        completedLines = 0;
+        level = 0;
+        score = 0;
+        combo = 0;
+        lvlUp = false;
+
+        initialisePiece(id);
+   }
+
+   bool doesPieceFit(string shape, int moveX = 0, int moveY = 0){
+      int side = sqrt(double(shape.size()));
+
+      for(int i = 0; i < side*side; i++){
+         int y = i / side;
+         int x = i % side;
+
+         if(shape[i] == 'x'){
+            if((((posX + moveX + x) >= int(board[0].size())) || ((posX + moveX + int(x)) < 0))){
+               return false;
+            }
+            if(((posY + moveY + y) >= int(board.size()))){
+               return false;
+            }
+
+            if(board[posY + y + moveY][posX + x + moveX]){  // if piece already there
+               return false;
+            }
+         }
+      }
+
+      return true;
+   }
+
+   void rotatePiece(){
+      string tempShape = currentShape;
+      int side = 3;
+      if(templateId == 0) return;
+      if(templateId == 1) side = 4;
+
+      for(int i = 0; i < side*side; i++){   // vector transformation
+         int y = i / side;
+         int x = i % side;
+         tempShape[i] = currentShape[(((side*side) - side) + y - (x * side))];
+      }
+
+      if(doesPieceFit(tempShape)){
+         currentShape = tempShape;
+      }
+      else if(posX < 0 && doesPieceFit(tempShape, abs(posX))){
+         currentShape = tempShape;
+         movePiece(abs(posX));
+      }
+      else if((posX + side > int(board[0].size())) && doesPieceFit(tempShape, (posX + side - int(board.size())))){
+         currentShape = tempShape;
+         movePiece(int(board[0].size()) - (posX + side));
+      }
+   }
+
+   void movePiece(int direction){
+      if(doesPieceFit(currentShape, direction)){
+         posX += direction;
+      }
+   }
+
+   int updateLevel(){
+      unsigned int result = completedLines / 10;
+      lvlUp = (result > level);
+      return result;
+   }
+
+   void popFinishedLines(){
+      int howMany = board.size();
+      int lineSize = board[0].size();
+      combo = 0;
+
+      for(int i = (howMany - 1); i >= 0; i--){
+         bool finishedLine = true;
+         for(int j = 0; j < lineSize; j++){
+            if(!board[i][j]){
+               finishedLine = false;
+               break;
+            }
+         }
+
+         if(finishedLine){
+            combo++;
+            for(int j = i; j >= 0; j--){
+               if(j){
+                  board[j] = board[j - 1];
+               }
+               else{
+                  board[0] = vector<char> (10, false);
+               }
+            }
+            i++;  // so that it checks if the line that 'fell' is also completed
+         }
+      }
+
+      switch(combo){
+         case 0:
+            break;
+         case 1:
+            score += (40 * (level + 1));
+            break;
+         case 2:
+            score += (100 * (level + 1));
+            break;
+         case 3:
+            score += (300 * (level + 1));
+            break;
+         case 4:
+            score += (1200 * (level + 1));
+            break;
+      }
+
+      completedLines += combo;
+      level = updateLevel();
+   }
+
+   vector <vector <char> > saveBoard(){
+      vector <vector <char> > result = board;
+      int side = sqrt(double(currentShape.size()));
+      for(int i = 0; i < side; i++){
+         for(int j = 0; j < side; j++){
+            if(currentShape[i*side + j] == 'x'){
+               result[posY + i][posX + j] = (templateId + 1);
+            }
+         }
+      }
+      return result;
+   }
+
+   void print(vector <vector <char> > lastBoard){
+      vector <vector <char> > thisBoard = board;
+      int side = sqrt(double(currentShape.size()));
+      for(int i = 0; i < side; i++){
+         for(int j = 0; j < side; j++){
+            if(currentShape[i*side + j] == 'x'){
+               thisBoard[posY + i][posX + j] = (templateId + 1);
+            }
+         }
+      }
+
+      int rows = board.size();
+      int cols = board[0].size();
+      for(int i = 0; i < rows; i++){
+         for(int j = 0; j < cols; j++){
+            if(lastBoard[i][j] != thisBoard[i][j]){
+               switch(int(thisBoard[i][j])){
+                  case 1: Form1 -> Field[i * cols + j] -> Picture -> LoadFromFile("img/1.bmp"); break;
+                  case 2: Form1 -> Field[i * cols + j] -> Picture -> LoadFromFile("img/2.bmp"); break;
+                  case 3: Form1 -> Field[i * cols + j] -> Picture -> LoadFromFile("img/3.bmp"); break;
+                  case 4: Form1 -> Field[i * cols + j] -> Picture -> LoadFromFile("img/4.bmp"); break;
+                  case 5: Form1 -> Field[i * cols + j] -> Picture -> LoadFromFile("img/5.bmp"); break;
+                  case 6: Form1 -> Field[i * cols + j] -> Picture -> LoadFromFile("img/6.bmp"); break;
+                  case 7: Form1 -> Field[i * cols + j] -> Picture -> LoadFromFile("img/7.bmp"); break;
+                  default: Form1 -> Field[i * cols + j] -> Picture -> LoadFromFile("img/plain.bmp");
+               }
+            }
+         }
+      }
+   }
+
+   void drawPieceOnBoard(){
+      int side = sqrt(double(currentShape.size()));
+      for(int i = 0; i < side; i++){
+         for(int j = 0; j < side; j++){
+            if(currentShape[i*side + j] == 'x'){
+               board[posY + i][posX + j] = (templateId + 1);
+            }
+         }
+      }
+   }
+
+   void drop(){
+      if(doesPieceFit(currentShape, 0, 1)){
+         posY += 1;
+      }
+      else{
+         dropped = true;
+         drawPieceOnBoard();
+         popFinishedLines();
+      }
+   }
+
+   void printNextPiece(int id){
+      string piece = tetrTemplate[id];
+      int side = sqrt(double(piece.size()));
+      for(int i = 0; i < 4; i++){
+         for(int j = 0; j < 4; j++){
+            if(i < side && j < side){
+                if(piece[i * side + j] == 'x'){
+                    switch(id + 1){
+                       case 1: Form1 -> ShowNext[i * 4 + j] -> Picture -> LoadFromFile("img/1.bmp"); break;
+                       case 2: Form1 -> ShowNext[i * 4 + j] -> Picture -> LoadFromFile("img/2.bmp"); break;
+                       case 3: Form1 -> ShowNext[i * 4 + j] -> Picture -> LoadFromFile("img/3.bmp"); break;
+                       case 4: Form1 -> ShowNext[i * 4 + j] -> Picture -> LoadFromFile("img/4.bmp"); break;
+                       case 5: Form1 -> ShowNext[i * 4 + j] -> Picture -> LoadFromFile("img/5.bmp"); break;
+                       case 6: Form1 -> ShowNext[i * 4 + j] -> Picture -> LoadFromFile("img/6.bmp"); break;
+                       case 7: Form1 -> ShowNext[i * 4 + j] -> Picture -> LoadFromFile("img/7.bmp"); break;
+                   }
+               }
+               else{
+                  Form1 -> ShowNext[i * 4 + j] -> Picture -> LoadFromFile("img/plain.bmp");
+               }
+            }
+            else{
+               Form1 -> ShowNext[i * 4 + j] -> Picture -> LoadFromFile("img/plain.bmp");
+            }
+         }
+      }
+   }
+};
+
+bool initialise = false;
+
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+   // main
+   // img template: Form1 -> Field[0] -> Picture -> LoadFromFile("img/1.bmp");
+
+   for(int i = 0; i < 180; i++){
+               Field[i] -> Picture -> LoadFromFile("img/plain.bmp");
+        }
+        for(int i = 0; i < 16; i++){
+               ShowNext[i] -> Picture -> LoadFromFile("img/plain.bmp");
+        }
+
+   initialise = true;
+   Form1 -> Timer1 -> Enabled = !(Form1 -> Timer1 -> Enabled);
+   Form1 -> Label5 -> Visible = false;
+   PlaySound(NULL, 0, 0);
+   Form1 -> Button1 -> Caption = "Stop / Restart";
+
+
+}
+//---------------------------------------------------------------------------
+
+
+   Tetromino piece(rand()%7);
+   bool kbKey[4];
+   short kbHold[4];
+   int gameSpeed;
+   unsigned int tickCount;
+   int nextPieceId;
+   vector <vector <char> > lastBoardState;
+
+   int timer;
+
+void __fastcall TForm1::Timer1Timer(TObject *Sender)
+{
+if(initialise){
+   vector <vector <char> > temp(18, vector<char>(10, false));
+   for(int i=0; i<4; i++) kbHold[i] = false;
+   lastBoardState = temp;
+   piece = Tetromino(rand()%7);
+   gameSpeed = 48;  // how many ticks per drop   (48)
+   tickCount = 0;
+   nextPieceId = rand()%7;
+   piece.printNextPiece(nextPieceId);
+
+   PlaySound("snd/theme.wav", NULL, SND_ASYNC | SND_LOOP);
+
+   initialise = false;
+}
+      piece.print(lastBoardState);
+      Form1 -> Label1 -> Caption = ("Score: " + IntToStr(piece.score));
+      Form1 -> Label2 -> Caption = ("Level: " + IntToStr(piece.level));
+      Form1 -> Label3 -> Caption = ("Lines: " + IntToStr(piece.completedLines));
+
+      lastBoardState = piece.saveBoard();
+      tickCount++;
+
+      kbKey[0] = !kbHold[0] && (0x8000 & GetAsyncKeyState(VK_RIGHT)) != 0;  // right arrow
+      kbKey[1] = !kbHold[1] && (0x8000 & GetAsyncKeyState(VK_LEFT)) != 0;  // left arrow
+      kbKey[2] = !kbHold[2] && (0x8000 & GetAsyncKeyState(VK_UP)) != 0;  // up arrow
+      kbKey[3] = !kbHold[3] && (0x8000 & GetAsyncKeyState(VK_DOWN)) != 0;  // down arrow
+      for(int i = 0; i < 4; i++){
+         if(kbKey[i] && i == 2) kbHold[i] = 8;
+         else if(kbKey[i]) kbHold[i] = 5;
+         else if(kbHold[i]) kbHold[i]--;
+      }
+
+      if(kbKey[0]){  // move right
+         piece.movePiece(1);
+      }
+      else if(kbKey[1]){  // move left
+         piece.movePiece(-1);
+      }
+      if(kbKey[2]){  // rotate
+         piece.rotatePiece();
+      }
+      if((kbKey[3]) || !(tickCount % gameSpeed)){  // drop piece one level down
+         piece.drop();
+         tickCount = 0;
+         if(piece.lvlUp){
+            piece.lvlUp = false;
+            int lvl = piece.level;
+            if(lvl < 9){
+               gameSpeed = (48 - (5 * lvl));
+            }
+            else if(lvl < 19){
+               gameSpeed = (9 - floor((lvl + 2.0) / 3.0));
+            }
+            else if(lvl < 29){
+               gameSpeed = 2;
+            }
+            else {
+               gameSpeed = 1;
+            }
+         }
+      }
+
+      if(piece.dropped){
+         piece.initialisePiece(nextPieceId);
+         nextPieceId = rand()%7;
+         piece.printNextPiece(nextPieceId);
+      }
+
+      if(piece.gameOver){
+         Form1 -> Timer1 -> Enabled = false;
+         Form1 -> Label5 -> Visible = true;
+         PlaySound(NULL, 0, 0);
+         piece.board.clear();
+      }
+}
+//---------------------------------------------------------------------------
+
+

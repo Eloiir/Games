@@ -1,0 +1,257 @@
+//---------------------------------------------------------------------------
+
+#ifndef Unit1H
+#define Unit1H
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <ExtCtrls.hpp>
+#include <StdCtrls.hpp>
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <ExtCtrls.hpp>
+#include <StdCtrls.hpp>
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <ExtCtrls.hpp>
+#include <StdCtrls.hpp>
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <ExtCtrls.hpp>
+#include <StdCtrls.hpp>
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <ExtCtrls.hpp>
+#include <StdCtrls.hpp>
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <ExtCtrls.hpp>
+#include <StdCtrls.hpp>
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <ExtCtrls.hpp>
+#include <StdCtrls.hpp>
+//---------------------------------------------------------------------------
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <StdCtrls.hpp>
+#include <Forms.hpp>
+#include <ExtCtrls.hpp>
+//---------------------------------------------------------------------------
+class TForm1 : public TForm
+{
+__published:	// IDE-managed Components
+        TButton *Button1;
+        TImage *Image1;
+        TImage *Image2;
+        TImage *Image3;
+        TImage *Image4;
+        TImage *Image5;
+        TImage *Image6;
+        TImage *Image7;
+        TImage *Image8;
+        TImage *Image9;
+        TImage *Image10;
+        TImage *Image11;
+        TImage *Image12;
+        TImage *Image13;
+        TImage *Image14;
+        TImage *Image15;
+        TImage *Image16;
+        TImage *Image17;
+        TImage *Image18;
+        TImage *Image19;
+        TImage *Image20;
+        TImage *Image21;
+        TImage *Image22;
+        TImage *Image23;
+        TImage *Image24;
+        TImage *Image25;
+        TImage *Image26;
+        TImage *Image27;
+        TImage *Image28;
+        TImage *Image29;
+        TImage *Image30;
+        TImage *Image31;
+        TImage *Image32;
+        TImage *Image33;
+        TImage *Image34;
+        TImage *Image35;
+        TImage *Image36;
+        TImage *Image37;
+        TImage *Image38;
+        TImage *Image39;
+        TImage *Image40;
+        TImage *Image41;
+        TImage *Image42;
+        TImage *Image43;
+        TImage *Image44;
+        TImage *Image45;
+        TImage *Image46;
+        TImage *Image47;
+        TImage *Image48;
+        TImage *Image49;
+        TImage *Image50;
+        TImage *Image51;
+        TImage *Image52;
+        TImage *Image53;
+        TImage *Image54;
+        TImage *Image55;
+        TImage *Image56;
+        TImage *Image57;
+        TImage *Image58;
+        TImage *Image59;
+        TImage *Image60;
+        TImage *Image61;
+        TImage *Image62;
+        TImage *Image63;
+        TImage *Image64;
+        TImage *Image65;
+        TImage *Image66;
+        TImage *Image67;
+        TImage *Image68;
+        TImage *Image69;
+        TImage *Image70;
+        TImage *Image71;
+        TImage *Image72;
+        TImage *Image73;
+        TImage *Image74;
+        TImage *Image75;
+        TImage *Image76;
+        TImage *Image77;
+        TImage *Image78;
+        TImage *Image79;
+        TImage *Image80;
+        TImage *Image81;
+        TImage *Image82;
+        TImage *Image83;
+        TImage *Image84;
+        TImage *Image85;
+        TImage *Image86;
+        TImage *Image87;
+        TImage *Image88;
+        TImage *Image89;
+        TImage *Image90;
+        TImage *Image91;
+        TImage *Image92;
+        TImage *Image93;
+        TImage *Image94;
+        TImage *Image95;
+        TImage *Image96;
+        TImage *Image97;
+        TImage *Image98;
+        TImage *Image99;
+        TImage *Image100;
+        TImage *Image101;
+        TImage *Image102;
+        TImage *Image103;
+        TImage *Image104;
+        TImage *Image105;
+        TImage *Image106;
+        TImage *Image107;
+        TImage *Image108;
+        TImage *Image109;
+        TImage *Image110;
+        TImage *Image111;
+        TImage *Image112;
+        TImage *Image113;
+        TImage *Image114;
+        TImage *Image115;
+        TImage *Image116;
+        TImage *Image117;
+        TImage *Image118;
+        TImage *Image119;
+        TImage *Image120;
+        TImage *Image121;
+        TImage *Image122;
+        TImage *Image123;
+        TImage *Image124;
+        TImage *Image125;
+        TImage *Image126;
+        TImage *Image127;
+        TImage *Image128;
+        TImage *Image129;
+        TImage *Image130;
+        TImage *Image131;
+        TImage *Image132;
+        TImage *Image133;
+        TImage *Image134;
+        TImage *Image135;
+        TImage *Image136;
+        TImage *Image137;
+        TImage *Image138;
+        TImage *Image139;
+        TImage *Image140;
+        TImage *Image141;
+        TImage *Image142;
+        TImage *Image143;
+        TImage *Image144;
+        TImage *Image145;
+        TImage *Image146;
+        TImage *Image147;
+        TImage *Image148;
+        TImage *Image149;
+        TImage *Image150;
+        TImage *Image151;
+        TImage *Image152;
+        TImage *Image153;
+        TImage *Image154;
+        TImage *Image155;
+        TImage *Image156;
+        TImage *Image157;
+        TImage *Image158;
+        TImage *Image159;
+        TImage *Image160;
+        TImage *Image161;
+        TImage *Image162;
+        TImage *Image163;
+        TImage *Image164;
+        TImage *Image165;
+        TImage *Image166;
+        TImage *Image167;
+        TImage *Image168;
+        TImage *Image169;
+        TImage *Image170;
+        TImage *Image171;
+        TImage *Image172;
+        TImage *Image173;
+        TImage *Image174;
+        TImage *Image175;
+        TImage *Image176;
+        TImage *Image177;
+        TImage *Image178;
+        TImage *Image179;
+        TImage *Image180;
+        TLabel *Label1;
+        TLabel *Label2;
+        TLabel *Label3;
+        TTimer *Timer1;
+        TLabel *Label4;
+        TImage *Image181;
+        TImage *Image182;
+        TImage *Image183;
+        TImage *Image184;
+        TImage *Image185;
+        TImage *Image186;
+        TImage *Image187;
+        TImage *Image188;
+        TImage *Image189;
+        TImage *Image190;
+        TImage *Image191;
+        TImage *Image192;
+        TImage *Image193;
+        TImage *Image194;
+        TImage *Image195;
+        TImage *Image196;
+        TLabel *Label5;
+        void __fastcall Button1Click(TObject *Sender);
+        void __fastcall Timer1Timer(TObject *Sender);
+private:	// User declarations
+public:		// User declarations
+        TImage* Field[180];
+        TImage* ShowNext[16];
+        __fastcall TForm1(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TForm1 *Form1;
+//---------------------------------------------------------------------------
+#endif

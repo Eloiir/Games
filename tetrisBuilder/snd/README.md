@@ -1,0 +1,1 @@
+Only theme.wav is used because PlaySound() doesn't support playing multiple sounds at the same time, and I'm not exactly interested in using DirectX just for that. If someone is willing to, or wants to download these files (I don't own them or anything), then do as you like.
